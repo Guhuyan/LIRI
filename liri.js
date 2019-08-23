@@ -86,8 +86,9 @@ Actors: ${res.Actors}
 
   }
   else if (command.toUpperCase() == "CONCERT-THIS") {
+    let bitQuery = query.replace(" ", "%20");
     axios
-      .get(`https://rest.bandsintown.com/artists/${query}/events?app_id=codingbootcamp`)
+      .get(`https://rest.bandsintown.com/artists/${bitQuery}/events?app_id=codingbootcamp`)
       .then(function (response) {
         let res = response.data;
         for (i in res) {
